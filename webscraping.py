@@ -1,15 +1,25 @@
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
+import time
 
 # Buscar as informações
 nav = webdriver.Chrome()
 
-link = 'https://br.betano.com/sport/futebol/brasil/brasileirao-serie-a/10016/'
+link = 'https://br.betano.com/'
 
 nav.get(link)
-aposta_casa = nav.find_element('xpath', '/html/body/div[1]/div/section[2]/div[4]/div[2]/section/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]/div/section/div[2]/button[1]/span').get_attribute('innerHTML')
 
-print(aposta_casa)
+time.sleep(1)
+
+quit_ad = nav.find_elements_by_xpath('//*[@id="landing-page-modal"]/div/div[1]/button/svg').click()
+
+#quit_ad.click()
+
+time.sleep(15)
+
+#print()
 
 
 
