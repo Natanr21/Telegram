@@ -13,7 +13,7 @@ link = 'https://estrelabet.com/ptb/bet/main'
 
 nav.get(link)
 
-time.sleep(3)
+time.sleep(5)
 
 click_cookies = nav.find_element(By.XPATH,'//*[@id="cookies-bottom-modal"]/div/div[1]/a')
 action_chains.click(click_cookies).perform()
@@ -21,9 +21,22 @@ time.sleep(5)
 
 brasileirao23 = nav.find_element(By.XPATH,'//*[@id="container-main-right"]/league-card/div/div[1]/div/a')
 action_chains.click(brasileirao23).perform()
-time.sleep(10)
+time.sleep(5)
 
+div_mae = nav.find_element(By.XPATH, '//*[@id="container-main"]/fixtures/div')
 
+html_content = div_mae.get_attribute('outerHTML')
+
+soup = BeautifulSoup(html_content, 'html.parser')
+
+times = soup.find_all('span' , class_='bet-btn-text')
+times_br = ['Empate','América-MG','Athletico-PR','Atlético-MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
+
+for time in times:
+  if(time == times_br[]):
+    print(time.get_text())
+  else:
+    print("-----------------")
 
 #print()
 #
