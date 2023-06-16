@@ -30,13 +30,15 @@ html_content = div_mae.get_attribute('outerHTML')
 soup = BeautifulSoup(html_content, 'html.parser')
 
 times = soup.find_all('span' , class_='bet-btn-text')
-times_br = ['Empate','América-MG','Athletico-PR','Atlético-MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
+times_br = ['Empate','América MG','Athletico PR','Atlético MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
 
 for time in times:
-  if(time == times_br[]):
-    print(time.get_text())
-  else:
-    print("-----------------")
+    times_ext = time.get_text()
+    for team in times_br:
+        if team == times_ext:
+            timesbr23 = []
+            timesbr23.append(times_ext)
+        
 
 #print()
 #
@@ -44,5 +46,3 @@ for time in times:
 
 #<span class="sgl-ParticipantOddsOnly80_Odds">2.40</span>
 # Salvar em um dicionário
-
-# Bot Telegram
