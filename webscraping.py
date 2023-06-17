@@ -31,18 +31,16 @@ soup = BeautifulSoup(html_content, 'html.parser')
 
 times = soup.find_all('span' , class_='bet-btn-text')
 times_br = ['Empate','América MG','Athletico PR','Atlético MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
+timesbr23 = []
+odds = []
 
 for time in times:
     times_ext = time.get_text()
     for team in times_br:
         if team == times_ext:
-            timesbr23 = []
             timesbr23.append(times_ext)
         
+        else:
+            continue
 
-#print()
-#
-#//*[@id="trader-estrelabet"]
 
-#<span class="sgl-ParticipantOddsOnly80_Odds">2.40</span>
-# Salvar em um dicionário
