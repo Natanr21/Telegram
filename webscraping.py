@@ -29,7 +29,7 @@ html_content = div_mae.get_attribute('outerHTML')
 
 soup = BeautifulSoup(html_content, 'html.parser')
 
-times = soup.find_all('span' , class_='bet-btn-text')
+times = soup.find_all('a', class_='btn bet-btn waves-effect waves-light flex-item twoRow ng-star-inserted')
 times_br = ['Empate','América MG','Athletico PR','Atlético MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
 timesbr23 = []
 odds = []
@@ -39,8 +39,10 @@ for time in times:
     for team in times_br:
         if team == times_ext:
             timesbr23.append(times_ext)
-        
+
+        elif times_ext == int:
+            odds.append(times_ext)
         else:
             continue
 
-
+print(timesbr23, odds)
