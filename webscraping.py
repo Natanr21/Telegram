@@ -32,7 +32,11 @@ soup = BeautifulSoup(html_content, 'html.parser')
 times = soup.find_all('span' , class_='bet-btn-text')
 times_br = ['Empate','América MG','Athletico PR','Atlético MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
 timesbr23 = []
-odds = []
+odds = soup.find_all('span', class_='bet-btn-odd')
+odds_ok = []
+#odds_br = 
+
+
 
 for time in times:
     times_ext = time.get_text()
@@ -44,3 +48,6 @@ for time in times:
             continue
 
 
+for odd in odds:
+    odds_ext = odd.get_text()
+    for time in times_br:
