@@ -51,3 +51,5 @@ for time in times:
 for odd in odds:
     odds_ext = odd.get_text()
     for time in times_br:
+
+    # usar comparação lógica com números
