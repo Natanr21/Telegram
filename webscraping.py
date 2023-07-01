@@ -36,13 +36,12 @@ odds = []
 
 for time in times:
     times_ext = time.get_text()
-    for team in times_br:
-        if team == times_ext:
-            timesbr23.append(times_ext)
+    #for team in times_br:
+        #if team == times_ext:
+           # timesbr23.append(times_ext)
+       # else:
+           # continue
 
-        elif times_ext == int:
-            odds.append(times_ext)
-        else:
-            continue
+print(times_ext)
 
-print(timesbr23, odds)
+#<a bet-button="" class="btn bet-btn waves-effect waves-light flex-item twoRow ng-star-inserted" title="Vasco da Gama" foid="6355638925"><span class="bet-btn-odd">2.25</span><span class="bet-btn-text">Vasco da Gama</span></a>
