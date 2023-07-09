@@ -47,9 +47,10 @@ for time in times:
         else:
             continue
 
+print(timesbr23)
 
-for odd in odds:
-    odds_ext = odd.get_text()
-    for time in times_br:
+#for odd in odds:
+    #odds_ext = odd.get_text()
+    #for time in times_br:
 
     # usar comparação lógica com números
