@@ -13,7 +13,7 @@ link = 'https://estrelabet.com/ptb/bet/main'
 
 nav.get(link)
 
-time.sleep(5)
+time.sleep(15)
 
 click_cookies = nav.find_element(By.XPATH,'//*[@id="cookies-bottom-modal"]/div/div[1]/a')
 action_chains.click(click_cookies).perform()
@@ -29,19 +29,18 @@ html_content = div_mae.get_attribute('outerHTML')
 
 soup = BeautifulSoup(html_content, 'html.parser')
 
-times = soup.find_all('a', class_='btn bet-btn waves-effect waves-light flex-item twoRow ng-star-inserted')
+times = soup.find_all('a', class_='btn bet-btn waves-effect waves-light flex-item twoRow')
 times_br = ['Empate','América MG','Athletico PR','Atlético MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
 timesbr23 = []
 odds = []
 
-for time in times:
-    times_ext = time.get_text()
-    #for team in times_br:
-        #if team == times_ext:
-           # timesbr23.append(times_ext)
-       # else:
-           # continue
+#for time in times:
+ #  for team in times_br:
+  #      if team == times_ext:
+   #         timesbr23.append(times_ext)
+    #    else:
+     #       continue
 
-print(times_ext)
+print(times.text)
 
 #<a bet-button="" class="btn bet-btn waves-effect waves-light flex-item twoRow ng-star-inserted" title="Vasco da Gama" foid="6355638925"><span class="bet-btn-odd">2.25</span><span class="bet-btn-text">Vasco da Gama</span></a>
