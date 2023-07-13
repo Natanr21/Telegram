@@ -13,7 +13,7 @@ link = 'https://estrelabet.com/ptb/bet/main'
 
 nav.get(link)
 
-time.sleep(5)
+time.sleep(10)
 
 click_cookies = nav.find_element(By.XPATH,'//*[@id="cookies-bottom-modal"]/div/div[1]/a')
 action_chains.click(click_cookies).perform()
