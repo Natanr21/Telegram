@@ -32,7 +32,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 times = soup.find_all('a', class_='btn bet-btn waves-effect waves-light flex-item twoRow')
 times_br = ['Empate','América MG','Athletico PR','Atlético MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
 timesbr23 = []
-odds = []
+texto = times.get_text(times)
 
 #for time in times:
  #  for team in times_br:
@@ -41,6 +41,6 @@ odds = []
     #    else:
      #       continue
 
-print(times.text)
+print(texto)
 
 #<a bet-button="" class="btn bet-btn waves-effect waves-light flex-item twoRow ng-star-inserted" title="Vasco da Gama" foid="6355638925"><span class="bet-btn-odd">2.25</span><span class="bet-btn-text">Vasco da Gama</span></a>
