@@ -13,13 +13,13 @@ link = 'https://estrelabet.com/ptb/bet/main'
 
 nav.get(link)
 
-time.sleep(10)
+time.sleep(15)
 
 click_cookies = nav.find_element(By.XPATH,'//*[@id="cookies-bottom-modal"]/div/div[1]/a')
 action_chains.click(click_cookies).perform()
 time.sleep(5)
 
-brasileirao23 = nav.find_element(By.XPATH,'//*[@id="container-main-right"]/league-card/div/div[1]/div/a')
+brasileirao23 = nav.find_element(By.XPATH,'//*[@id="container-main-right"]/league-card/div[2]/div[1]/div/a')
 action_chains.click(brasileirao23).perform()
 time.sleep(5)
 
@@ -29,25 +29,36 @@ html_content = div_mae.get_attribute('outerHTML')
 
 soup = BeautifulSoup(html_content, 'html.parser')
 
-times = soup.find_all('span' , class_='bet-btn-text')
+times = soup.find_all('a' , class_='btn bet-btn waves-effect waves-light flex-item twoRow ng-star-inserted')
 times_br = ['Empate','América MG','Athletico PR','Atlético MG','Bahia','Botafogo','Corinthians','Coritiba','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Bragantino','Santos','São Paulo','Vasco da Gama']
-timesbr23 = []
-odds = soup.find_all('span', class_='bet-btn-odd')
-odds_ok = []
+span_time = times.find_all('span')
+
+if len(span_time) == 2:
+    odds = span_time[0].text
+    times = span_time[1].text
+
+    print("Span 1:", odds)
+    print("Span 2:", times)
+
+else:
+    print("Erro")
+
+#odds = soup.find_all('span', class_='bet-btn-odd')
+#odds_ok = []
 #odds_br = 
 
 
 
-for time in times:
-    times_ext = time.get_text()
-    for team in times_br:
-        if team == times_ext:
-            timesbr23.append(times_ext)
+#for time in times:
+ #   times_ext = time.get_text()
+  #  for team in times_br:
+   #     if team == times_ext:
+    #        timesbr23.append(times_ext)
         
-        else:
-            continue
+     #   else:
+      #      continue
 
-print(timesbr23)
+#print(timesbr23)
 
 #for odd in odds:
     #odds_ext = odd.get_text()
